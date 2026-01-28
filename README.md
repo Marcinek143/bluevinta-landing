@@ -11,3 +11,8 @@ Stack:
 ## Development
 
 - Dev uses Webpack (`npm run dev`) to avoid Turbopack hydration mismatch warnings.
+
+## Leads
+
+- Set `MAKE_WEBHOOK_URL` in Vercel environment variables (and locally in `.env`) to point to the Make.com webhook.
+- Current Make scenario: Webhook → Google Sheets → Email to `lead@bluevinta.com`.

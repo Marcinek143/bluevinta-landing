@@ -7,13 +7,15 @@ export default function Footer() {
         <div className="flex w-full max-w-[1280px] flex-col gap-8">
           <div className="flex flex-col items-start gap-8 md:flex-row md:justify-between">
             <div className="flex flex-col gap-4">
-              <Image
-                src="/vinta_logo_biale.svg"
-                alt="Blue Vinta Services"
-                width={212}
-                height={45}
-                className="h-8 w-auto"
-              />
+              <a href="#top" className="inline-flex items-center">
+                <Image
+                  src="/vinta_logo_biale.svg"
+                  alt="Blue Vinta Services"
+                  width={212}
+                  height={45}
+                  className="h-8 w-auto"
+                />
+              </a>
               <p className="max-w-[300px] text-sm text-gray-400">
                 Profesjonalna spedycja międzynarodowa i agencja celna. Twój partner w globalnym handlu.
               </p>
@@ -47,7 +49,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-center gap-4 border-t border-white/10 pt-8 md:flex-row md:justify-between">
             <p className="text-xs text-gray-500">
-              © 2024 Blue Vinta Services. Wszelkie prawa zastrzeżone.
+              © 2021 Blue Vinta Services. Wszelkie prawa zastrzeżone.
             </p>
             <div className="flex gap-4">
               <span className="size-6 rounded-full bg-white/10" aria-hidden="true" />

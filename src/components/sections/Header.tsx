@@ -13,7 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border-light bg-background-light/95 backdrop-blur-sm">
       <div className="px-4 md:px-8 lg:px-40 flex justify-center">
         <div className="flex h-16 w-full max-w-[1280px] items-center justify-between">
-          <div className="flex items-center gap-3">
+          <a href="#top" className="flex items-center gap-3">
             <Image
               src="/vinta_logo_czarne.svg"
               alt="Blue Vinta Services"
@@ -22,7 +22,7 @@ export default function Header() {
               priority
               className="h-9 w-auto"
             />
-          </div>
+          </a>
           <div className="hidden items-center gap-8 lg:flex">
             <nav className="flex items-center gap-8" aria-label="Główna nawigacja">
               {navLinks.map((link) => (

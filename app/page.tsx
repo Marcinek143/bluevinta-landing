@@ -11,7 +11,7 @@ import WhyUs from "@/components/sections/WhyUs";
 
 export default function Home() {
   return (
-    <div className="bg-background-light text-text-main">
+    <div id="top" className="bg-background-light text-text-main">
       <Header />
       <main className="flex flex-col">
         <Hero />
