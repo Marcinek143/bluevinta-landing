@@ -230,9 +230,6 @@ export default function Contact() {
                     Twoje dane są bezpieczne. Odpowiadamy zazwyczaj w ciągu 2h.
                   </p>
                 )}
-                <p className="mt-2 text-center text-xs text-secondary">
-                  Twoje dane są bezpieczne. Odpowiadamy zazwyczaj w ciągu 2h.
-                </p>
               </form>
             </div>
           </div>
