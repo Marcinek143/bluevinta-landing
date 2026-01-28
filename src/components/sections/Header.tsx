@@ -84,44 +84,45 @@ export default function Header() {
             className="text-text-main lg:hidden"
             aria-label={isMenuOpen ? "Zamknij menu nawigacji" : "Otwórz menu nawigacji"}
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
             onClick={toggleMenu}
           >
             <Icon name={isMenuOpen ? "close" : "menu"} className="h-7 w-7" />
           </button>
         </div>
       </div>
-      <button
-        type="button"
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-200 lg:hidden ${
-          isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        onClick={closeMenu}
-        aria-label="Zamknij menu"
-        tabIndex={isMenuOpen ? 0 : -1}
-        aria-hidden={!isMenuOpen}
-      />
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu nawigacji"
-        aria-hidden={!isMenuOpen}
-        className={`fixed inset-y-0 right-0 z-50 w-72 max-w-[80vw] bg-white p-6 shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <nav className="flex flex-col gap-4" aria-label="Menu mobilne">
-          {mobileLinks.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              ref={index === 0 ? firstLinkRef : undefined}
-              className="text-base font-semibold text-text-main transition-colors hover:text-primary"
-              onClick={closeMenu}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+      <div className="lg:hidden">
+        <div
+          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu nawigacji"
+          aria-hidden={!isMenuOpen}
+          className={`fixed inset-y-0 right-0 z-50 h-full w-[85%] max-w-sm bg-white p-6 shadow-xl border-l border-border-light rounded-l-2xl transition-transform duration-300 ease-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <nav className="flex flex-col divide-y divide-border-light" aria-label="Menu mobilne">
+            {mobileLinks.map((link, index) => (
+              <a
+                key={link.href}
+                href={link.href}
+                ref={index === 0 ? firstLinkRef : undefined}
+                className="block py-3 text-lg font-medium text-text-main transition-colors hover:text-primary"
+                onClick={closeMenu}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );
