@@ -52,18 +52,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
     }
 
-    const { company, name, email, phone, details, website } = body as Record<string, string | undefined>;
+    const asString = (value: unknown) => (typeof value === "string" ? value : "");
+    const company = asString((body as Record<string, unknown>).company);
+    const name = asString((body as Record<string, unknown>).name);
+    const email = asString((body as Record<string, unknown>).email);
+    const phone = asString((body as Record<string, unknown>).phone);
+    const details = asString((body as Record<string, unknown>).details);
+    const website = asString((body as Record<string, unknown>).website);
 
     if (website && website.trim().length > 0) {
       return NextResponse.json({ ok: true });
     }
 
     const errors: string[] = [];
-    if (!company?.trim()) errors.push("company");
-    if (!name?.trim()) errors.push("name");
-    if (!email?.trim() || !emailRegex.test(email)) errors.push("email");
-    if (!phone?.trim() || phone.trim().length < 7) errors.push("phone");
-    if (!details?.trim()) errors.push("details");
+    const companyT = company.trim();
+    const nameT = name.trim();
+    const emailT = email.trim();
+    const phoneT = phone.trim();
+    const detailsT = details.trim();
+
+    if (!companyT) errors.push("company");
+    if (!nameT) errors.push("name");
+    if (!emailT || !emailRegex.test(emailT)) errors.push("email");
+    if (!phoneT || phoneT.length < 7) errors.push("phone");
+    if (!detailsT) errors.push("details");
 
     if (errors.length) {
       return NextResponse.json({ ok: false, error: "validation", fields: errors }, { status: 400 });
@@ -73,11 +85,11 @@ export async function POST(req: NextRequest) {
 
     const payload = {
       timestamp: new Date().toISOString(),
-      company: company.trim(),
-      name: name.trim(),
-      email: email.trim(),
-      phone: phone.trim(),
-      details: details.trim(),
+      company: companyT,
+      name: nameT,
+      email: emailT,
+      phone: phoneT,
+      details: detailsT,
       source: "bluevinta-landing",
       userAgent: req.headers.get("user-agent") ?? "",
       ip,
