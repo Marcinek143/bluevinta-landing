@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blue Vinta Services - Spedycja Międzynarodowa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "primary-dark": "#0d3da3",
+                        "secondary": "#4c669a",
+                        "background-light": "#ffffff",
+                        "background-subtle": "#f8f9fc",
+                        "background-dark": "#101622",
+                        "border-light": "#e7ebf3",
+                        "text-main": "#0d121b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-background-light/95 backdrop-blur-sm border-b border-border-light">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center w-full">
+<div class="flex h-16 w-full max-w-[1280px] items-center justify-between">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-lg font-bold leading-tight tracking-[-0.015em]">Blue Vinta Services</h2>
+</div>
+<div class="hidden lg:flex items-center gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-text-main hover:text-primary text-sm font-medium transition-colors" href="#services">Usługi</a>
+<a class="text-text-main hover:text-primary text-sm font-medium transition-colors" href="#why-us">O nas</a>
+<a class="text-text-main hover:text-primary text-sm font-medium transition-colors" href="#process">Proces</a>
+<a class="text-text-main hover:text-primary text-sm font-medium transition-colors" href="#contact">Kontakt</a>
+</nav>
+<a class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold" href="#contact">
+<span>Bezpłatna wycena</span>
+</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="lg:hidden text-text-main">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative flex w-full flex-col bg-background-subtle">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center py-12 lg:py-24">
+<div class="flex flex-col lg:flex-row max-w-[1280px] w-full gap-12 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6 flex-1 lg:max-w-[600px]">
+<h1 class="text-text-main text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl">
+                        Spedycja międzynarodowa i odprawy celne bez opóźnień
+                    </h1>
+<p class="text-secondary text-lg font-normal leading-relaxed max-w-[540px]">
+                        Kompleksowy transport i szybkie odprawy celne dla polskich firm. Zajmujemy się formalnościami, abyś Ty mógł zająć się biznesem.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-2">
+<a class="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all shadow-lg shadow-blue-500/20" href="#contact">
+<span>Bezpłatna wycena transportu</span>
+</a>
+<a class="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-white border border-border-light hover:bg-gray-50 text-text-main text-base font-bold transition-all" href="tel:+48789008911">
+<span>Zadzwoń teraz</span>
+</a>
+</div>
+</div>
+<!-- Hero Image -->
+<div class="flex-1 w-full lg:h-[500px] h-[300px] rounded-2xl overflow-hidden shadow-2xl relative" data-alt="Large container ship at a busy port with cranes in the background under a blue sky">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsK3SL6G1YO9LXHU4zHiFcKkgqM7Rd7icVkatnJNfQXaU2KMQn60V2eVlRGgoejtuNLYqEVfkDy3zT3Tp3uvNkUGwZe61Q2WIyr8rNIivmNF5dz7YBDz7nVXLhHfqDaX-o4dB9i3b-CILMu4Rpl0OvkvZsqd0BEjlKWPiPKS15uxstXlQ6ojrmpvSOWGXWbfBZzOoDADdpcm91Fp-09ORhrLGzHy3t3TwUWgOCDlcnRZN3mfk20OmLtZ8RCBsFVwawYSNUz7P8qebt");'></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain Points Section -->
+<section class="w-full bg-white py-20">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full gap-12">
+<div class="flex flex-col gap-4 text-center items-center">
+<h2 class="text-text-main text-3xl font-bold leading-tight md:text-4xl max-w-[800px]">
+                        Typowe problemy w logistyce, które rozwiązujemy
+                    </h2>
+<p class="text-secondary text-lg max-w-[700px]">
+                        Nie pozwól, aby opóźnienia i skomplikowane formalności hamowały Twój biznes.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-4 rounded-xl border border-border-light bg-background-subtle p-8 hover:shadow-md transition-shadow">
+<div class="text-red-600 mb-2">
+<span class="material-symbols-outlined text-4xl">schedule</span>
+</div>
+<h3 class="text-text-main text-xl font-bold">Opóźnienia dostaw</h3>
+<p class="text-secondary">Minimalizujemy ryzyko przestojów dzięki precyzyjnemu planowaniu tras i doborowi sprawdzonych przewoźników.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-border-light bg-background-subtle p-8 hover:shadow-md transition-shadow">
+<div class="text-red-600 mb-2">
+<span class="material-symbols-outlined text-4xl">gavel</span>
+</div>
+<h3 class="text-text-main text-xl font-bold">Zatrzymania celne</h3>
+<p class="text-secondary">Nasi agenci celni gwarantują 100% poprawność dokumentacji, eliminując ryzyko kosztownych blokad towaru.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-border-light bg-background-subtle p-8 hover:shadow-md transition-shadow">
+<div class="text-red-600 mb-2">
+<span class="material-symbols-outlined text-4xl">visibility_off</span>
+</div>
+<h3 class="text-text-main text-xl font-bold">Ukryte koszty</h3>
+<p class="text-secondary">Oferujemy jasną strukturę kosztów 'all-in'. Żadnych niespodzianek na fakturze końcowej.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="w-full bg-background-subtle py-20" id="services">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full gap-12">
+<div class="flex flex-col gap-2">
+<h2 class="text-text-main text-3xl font-bold leading-tight md:text-4xl">Nasze Usługi</h2>
+<p class="text-secondary text-lg">Kompleksowe wsparcie dla Twojego łańcucha dostaw.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 1 -->
+<div class="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">public</span>
+</div>
+<div>
+<h3 class="text-text-main text-xl font-bold mb-2">Spedycja międzynarodowa</h3>
+<p class="text-secondary text-sm leading-relaxed">Organizacja transportu na terenie całej Europy oraz między kontynentami. Pełna obsługa logistyczna.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+</div>
+<div>
+<h3 class="text-text-main text-xl font-bold mb-2">Transport drogowy</h3>
+<p class="text-secondary text-sm leading-relaxed">Transport całopojazdowy (FTL) i drobnicowy (LTL). Terminowość i bezpieczeństwo ładunku.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">sailing</span>
+</div>
+<div>
+<h3 class="text-text-main text-xl font-bold mb-2">Spedycja morska</h3>
+<p class="text-secondary text-sm leading-relaxed">Import i eksport drogą morską. Kontenery FCL i drobnica LCL z głównych portów świata.</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">approval_delegation</span>
+</div>
+<div>
+<h3 class="text-text-main text-xl font-bold mb-2">Odprawy celne</h3>
+<p class="text-secondary text-sm leading-relaxed">Agencja celna. Reprezentacja przed urzędem, procedury uproszczone, doradztwo taryfowe.</p>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="group flex flex-col gap-4 rounded-xl bg-white p-6 shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">supervisor_account</span>
+</div>
+<div>
+<h3 class="text-text-main text-xl font-bold mb-2">Doradztwo logistyczne</h3>
+<p class="text-secondary text-sm leading-relaxed">Optymalizacja łańcucha dostaw. Pomagamy wybrać najkorzystniejsze rozwiązania transportowe.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section -->
+<section class="w-full bg-white py-20 border-b border-border-light" id="why-us">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col md:flex-row max-w-[1280px] w-full gap-16 items-center">
+<div class="flex-1 flex flex-col gap-8">
+<h2 class="text-text-main text-3xl font-bold leading-tight md:text-4xl">Dlaczego warto nam zaufać?</h2>
+<ul class="flex flex-col gap-6">
+<li class="flex gap-4 items-start">
+<div class="mt-1 size-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Szybka wycena</h4>
+<p class="text-secondary text-sm">Otrzymasz ofertę transportową zazwyczaj w ciągu 2 godzin od zapytania.</p>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<div class="mt-1 size-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Transparentność</h4>
+<p class="text-secondary text-sm">Jasne warunki współpracy i stały kontakt z dedykowanym opiekunem.</p>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<div class="mt-1 size-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Bezpośredni kontakt</h4>
+<p class="text-secondary text-sm">Nie jesteś numerem w systemie. Zawsze możesz zadzwonić do swojego spedytora.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="flex-1 relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl" data-alt="Modern logistics warehouse interior with workers and packages">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBI3iePCUvCqQmk2AszlEjAzI9nOMMhCHz95H1-bSehsAdEnWslo9-szqP6-VqRj0QdkFtvv3CiqQ6-wV8mrnwiXECw7mz2lI1XMF75rfE-V3BbGIoyn1QKSgVjWf2RkWz68Zn-Gr7w60B0vFdSVx_3XRuczdNJfnWutuloxExNm3ElP8JEWU3OzUY2eLLECwoOkuIguyZMTKLuLYsO8r_dqQMyZ47EJLs6zgigwQFNlKb8CQHVCFryBFxzDlx78Fe2Jh_XoJmOQ2LC");'></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="w-full bg-background-subtle py-24" id="process">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full gap-16">
+<div class="text-center">
+<h2 class="text-text-main text-3xl font-bold md:text-4xl">Jak działamy?</h2>
+<p class="text-secondary mt-2">Prosty proces od zapytania do dostawy</p>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-8">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-6 left-0 w-full h-0.5 bg-border-light -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center gap-4 flex-1">
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl border-4 border-background-subtle">1</div>
+<h3 class="font-bold text-lg">Zapytanie</h3>
+<p class="text-sm text-secondary">Przesyłasz szczegóły ładunku i trasy.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center gap-4 flex-1">
+<div class="size-12 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">2</div>
+<h3 class="font-bold text-lg">Wycena</h3>
+<p class="text-sm text-secondary">Przygotowujemy optymalną ofertę.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center gap-4 flex-1">
+<div class="size-12 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">3</div>
+<h3 class="font-bold text-lg">Zlecenie</h3>
+<p class="text-sm text-secondary">Akceptujesz warunki i zlecasz transport.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center gap-4 flex-1">
+<div class="size-12 rounded-full bg-white text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">4</div>
+<h3 class="font-bold text-lg">Realizacja</h3>
+<p class="text-sm text-secondary">Odbiór, transport i odprawa celna.</p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center gap-4 flex-1">
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl border-4 border-background-subtle">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<h3 class="font-bold text-lg">Dostawa</h3>
+<p class="text-sm text-secondary">Towar dociera bezpiecznie do celu.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Industries & Directions -->
+<section class="w-full bg-white py-16">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full gap-10">
+<h2 class="text-text-main text-2xl font-bold text-center">Obsługiwane branże i kierunki</h2>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">shopping_cart</span>
+<span class="font-semibold text-sm">E-commerce</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">factory</span>
+<span class="font-semibold text-sm">Produkcja</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">public</span>
+<span class="font-semibold text-sm">Europa</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">flight_takeoff</span>
+<span class="font-semibold text-sm">Azja (Chiny)</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">map</span>
+<span class="font-semibold text-sm">USA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="w-full bg-background-subtle py-20">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[800px] w-full gap-10">
+<h2 class="text-text-main text-3xl font-bold text-center">Częste pytania</h2>
+<div class="flex flex-col gap-4">
+<details class="group bg-white rounded-lg border border-border-light overflow-hidden open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-text-main list-none">
+                            Jakie dokumenty są potrzebne do odprawy celnej?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-secondary text-sm leading-relaxed">
+                            Podstawowe dokumenty to faktura handlowa, packing list (specyfikacja towaru) oraz list przewozowy (CMR/Bill of Lading). W zależności od rodzaju towaru mogą być wymagane dodatkowe certyfikaty (np. CE, sanepid).
+                        </div>
+</details>
+<details class="group bg-white rounded-lg border border-border-light overflow-hidden open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-text-main list-none">
+                            Ile czasu zajmuje przygotowanie wyceny?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-secondary text-sm leading-relaxed">
+                            W przypadku transportu drogowego standardowego wycenę przygotowujemy zazwyczaj w ciągu 1-2 godzin. Wyceny spedycji morskiej i lotniczej mogą zająć do 24 godzin ze względu na konieczność potwierdzenia stawek u armatorów.
+                        </div>
+</details>
+<details class="group bg-white rounded-lg border border-border-light overflow-hidden open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-text-main list-none">
+                            Czy obsługujecie klientów indywidualnych?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-secondary text-sm leading-relaxed">
+                            Specjalizujemy się w obsłudze firm (B2B). Obsługa celna dla osób prywatnych (np. mienie przesiedlenia) jest możliwa, ale podlega indywidualnej ocenie i wycenie.
+                        </div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="w-full bg-white py-20" id="contact">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col lg:flex-row max-w-[1280px] w-full gap-12 lg:gap-24">
+<!-- Contact Info -->
+<div class="flex-1 flex flex-col justify-center gap-8">
+<div>
+<h2 class="text-text-main text-3xl font-bold md:text-4xl mb-4">Skontaktuj się z nami</h2>
+<p class="text-secondary text-lg">Jesteśmy gotowi, aby usprawnić Twoją logistykę. Wypełnij formularz lub zadzwoń bezpośrednio.</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-sm text-secondary font-medium">Telefon</p>
+<a class="text-xl font-bold text-text-main hover:text-primary transition-colors" href="tel:+48789008911">+48 789 008 911</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-sm text-secondary font-medium">Email</p>
+<a class="text-xl font-bold text-text-main hover:text-primary transition-colors" href="mailto:kontakt@bluevinta.pl">kontakt@bluevinta.pl</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-sm text-secondary font-medium">Biuro</p>
+<p class="text-lg font-bold text-text-main">ul. Portowa 8, 81-350 Gdynia</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="flex-1">
+<div class="bg-background-subtle p-8 rounded-2xl border border-border-light shadow-lg">
+<h3 class="text-xl font-bold text-text-main mb-6">Formularz wyceny</h3>
+<form class="flex flex-col gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-sm font-semibold text-text-main">Nazwa firmy</label>
+<input class="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Twoja firma" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-sm font-semibold text-text-main">Osoba kontaktowa</label>
+<input class="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Imię i nazwisko" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-sm font-semibold text-text-main">Email</label>
+<input class="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary" placeholder="email@firma.pl" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-sm font-semibold text-text-main">Telefon</label>
+<input class="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary" placeholder="+48 ..." type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-sm font-semibold text-text-main">Opis trasy i ładunku</label>
+<textarea class="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Skąd, dokąd, waga, wymiary, rodzaj towaru..." rows="4"></textarea>
+</div>
+<button class="mt-2 w-full rounded-lg bg-primary py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-md" type="button">
+                                Otrzymaj bezpłatną wycenę
+                            </button>
+<p class="text-xs text-secondary text-center mt-2">Twoje dane są bezpieczne. Odpowiadamy zazwyczaj w ciągu 2h.</p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-background-dark text-white py-12 border-t border-white/10">
+<div class="px-4 md:px-8 lg:px-40 flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="flex flex-col gap-4">
+<h2 class="text-lg font-bold">Blue Vinta Services</h2>
+<p class="text-gray-400 text-sm max-w-[300px]">Profesjonalna spedycja międzynarodowa i agencja celna. Twój partner w globalnym handlu.</p>
+</div>
+<div class="flex gap-8 flex-wrap">
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-sm text-gray-200">Usługi</h3>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Spedycja morska</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Transport drogowy</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Odprawy celne</a>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-sm text-gray-200">Firma</h3>
+<a class="text-gray-400 text-sm hover:text-white" href="#">O nas</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Kariera</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Polityka prywatności</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-500 text-xs">© 2024 Blue Vinta Services. Wszelkie prawa zastrzeżone.</p>
+<div class="flex gap-4">
+<!-- Social placeholders -->
+<span class="size-6 bg-white/10 rounded-full"></span>
+<span class="size-6 bg-white/10 rounded-full"></span>
+<span class="size-6 bg-white/10 rounded-full"></span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
