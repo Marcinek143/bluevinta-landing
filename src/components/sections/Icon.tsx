@@ -16,7 +16,8 @@ export type IconName =
   | "phone"
   | "mail"
   | "location"
-  | "menu";
+  | "menu"
+  | "close";
 
 type IconProps = {
   name: IconName;
@@ -265,6 +266,18 @@ export function Icon({ name, className }: IconProps) {
           <path d="M4 7h16" />
           <path d="M4 12h16" />
           <path d="M4 17h16" />
+        </svg>
+      );
+    case "close":
+      return (
+        <svg
+          {...sharedProps}
+          viewBox="0 0 24 24"
+          className={className}
+          aria-hidden="true"
+        >
+          <path d="M6 6l12 12" />
+          <path d="M18 6l-12 12" />
         </svg>
       );
     default:
