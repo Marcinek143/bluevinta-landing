@@ -42,7 +42,7 @@ export default function WhyUs() {
               ))}
             </ul>
           </div>
-          <div className="relative h-[400px] w-full flex-1 overflow-hidden rounded-2xl shadow-xl">
+          <div className="relative w-full flex-1 overflow-hidden rounded-2xl shadow-lg aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:h-[400px]">
             <Image
               src="/trust-logistics.jpg"
               alt="Doświadczenie i niezawodność w logistyce – Blue Vinta Services"

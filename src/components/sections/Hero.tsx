@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative flex w-full flex-col bg-background-subtle">
       <div className="px-4 md:px-8 lg:px-40 flex justify-center py-12 lg:py-24">
-        <div className="flex w-full max-w-[1280px] flex-col items-center gap-12 lg:flex-row">
+        <div className="flex w-full max-w-[1280px] flex-col items-center gap-12 md:flex-row">
           <div className="flex flex-1 flex-col gap-6 lg:max-w-[600px]">
             <h1 className="text-4xl font-black leading-tight tracking-[-0.033em] text-text-main md:text-5xl lg:text-6xl">
               Spedycja międzynarodowa i odprawy celne bez opóźnień
@@ -27,7 +27,7 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div className="relative h-[300px] w-full flex-1 overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
+          <div className="relative w-full flex-1 overflow-hidden rounded-2xl shadow-lg aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:h-[500px]">
             <Image
               src="/hero-logistics.jpg"
               alt="Spedycja międzynarodowa i logistyka – Blue Vinta Services"
