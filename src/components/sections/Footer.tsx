@@ -47,6 +47,14 @@ export default function Footer() {
                 >
                   Polityka prywatności
                 </a>
+                <a
+                  className="text-sm text-gray-400 transition-colors hover:text-white"
+                  href="https://www.bluevinta.pl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Oficjalna strona: bluevinta.pl
+                </a>
               </div>
             </div>
           </div>

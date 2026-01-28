@@ -19,6 +19,10 @@ const mobileLinks = [
   { href: "#kontakt", label: "Kontakt" },
   { href: "/polityka-prywatnosci", label: "Polityka prywatności" },
 ];
+const corporateLink = {
+  href: "https://www.bluevinta.pl",
+  label: "Oficjalna strona (bluevinta.pl)",
+};
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,6 +105,17 @@ export default function Header() {
             </a>
           ))}
         </nav>
+        <div className="mt-4 border-t border-border-light pt-4">
+          <a
+            href={corporateLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block py-3 text-base font-medium text-secondary transition-colors hover:text-primary"
+            onClick={handleMobileNavClick(corporateLink.href)}
+          >
+            {corporateLink.label}
+          </a>
+        </div>
       </div>
     </>
   );
