@@ -41,7 +41,10 @@ export default function Footer() {
                 <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#contact">
                   Kariera
                 </a>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#contact">
+                <a
+                  className="text-sm text-gray-400 transition-colors hover:text-white"
+                  href="/polityka-prywatnosci"
+                >
                   Polityka prywatności
                 </a>
               </div>
