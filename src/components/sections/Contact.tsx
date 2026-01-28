@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { Icon } from "./Icon";
 
@@ -216,6 +217,20 @@ export default function Contact() {
                 >
                   {loading ? "Wysyłanie..." : "Otrzymaj bezpłatną wycenę"}
                 </button>
+                <p className="mt-3 text-xs leading-relaxed text-slate-500">
+                  Administratorem danych osobowych jest Blue Vinta Services z siedzibą w Polsce. Dane podane w formularzu
+                  przetwarzamy w celu odpowiedzi na zapytanie i przygotowania oferty (art. 6 ust. 1 lit. b i f RODO).
+                  Dane mogą być przekazywane dostawcom usług IT (Make.com, Google, Vercel) oraz poza EOG na podstawie
+                  standardowych klauzul umownych. Podanie danych jest dobrowolne, lecz niezbędne do obsługi zapytania.
+                  Szczegóły znajdują się w{" "}
+                  <Link
+                    href="/polityka-prywatnosci"
+                    className="underline transition-colors hover:text-text-main"
+                  >
+                    Polityce prywatności
+                  </Link>
+                  .
+                </p>
                 {error ? (
                   <p className="text-center text-xs font-semibold text-red-600" role="alert">
                     {error}
