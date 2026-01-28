@@ -11,7 +11,11 @@ function getClientIp(req: NextRequest) {
     const parts = forwarded.split(",");
     if (parts.length > 0) return parts[0].trim();
   }
-  return req.ip ?? "unknown";
+  const realIp = req.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+  const cfConnecting = req.headers.get("cf-connecting-ip");
+  if (cfConnecting) return cfConnecting.trim();
+  return "unknown";
 }
 
 async function forwardToMake(payload: unknown) {
