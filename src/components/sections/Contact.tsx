@@ -10,6 +10,8 @@ type FormState = {
   email: string;
   phone: string;
   details: string;
+  serviceType: string;
+  direction: string;
   website: string; // honeypot
 };
 
@@ -19,6 +21,8 @@ const initialState: FormState = {
   email: "",
   phone: "",
   details: "",
+  serviceType: "",
+  direction: "",
   website: "",
 };
 
@@ -35,6 +39,8 @@ export default function Contact() {
       !values.name.trim() ||
       !values.email.trim() ||
       !values.phone.trim() ||
+      !values.serviceType.trim() ||
+      !values.direction.trim() ||
       !values.details.trim()
     );
   }, [loading, values]);
@@ -55,6 +61,8 @@ export default function Contact() {
           email: values.email,
           phone: values.phone,
           details: values.details,
+          serviceType: values.serviceType,
+          direction: values.direction,
           website: values.website,
         }),
       });
@@ -189,6 +197,42 @@ export default function Contact() {
                     />
                   </label>
                 </div>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <label className="flex flex-col gap-1 text-sm font-semibold text-text-main">
+                    Rodzaj usługi
+                    <select
+                      name="serviceType"
+                      required
+                      value={values.serviceType}
+                      onChange={(e) => updateField("serviceType")(e.target.value)}
+                      className="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm text-text-main focus:border-primary focus:ring-1 focus:ring-primary"
+                    >
+                      <option value="">Wybierz...</option>
+                      <option value="Spedycja morska (FCL)">Spedycja morska (FCL)</option>
+                      <option value="Spedycja morska (LCL)">Spedycja morska (LCL)</option>
+                      <option value="Transport drogowy">Transport drogowy</option>
+                      <option value="Odprawa celna">Odprawa celna</option>
+                      <option value="Inne">Inne</option>
+                    </select>
+                  </label>
+                  <label className="flex flex-col gap-1 text-sm font-semibold text-text-main">
+                    Kierunek
+                    <select
+                      name="direction"
+                      required
+                      value={values.direction}
+                      onChange={(e) => updateField("direction")(e.target.value)}
+                      className="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm text-text-main focus:border-primary focus:ring-1 focus:ring-primary"
+                    >
+                      <option value="">Wybierz...</option>
+                      <option value="PL → UE">PL → UE</option>
+                      <option value="UE → PL">UE → PL</option>
+                      <option value="PL/UE → poza UE (eksport)">PL/UE → poza UE (eksport)</option>
+                      <option value="poza UE → PL/UE (import)">poza UE → PL/UE (import)</option>
+                      <option value="Nie wiem / do ustalenia">Nie wiem / do ustalenia</option>
+                    </select>
+                  </label>
+                </div>
                 <label className="flex flex-col gap-1 text-sm font-semibold text-text-main">
                   Opis trasy i ładunku
                   <textarea
@@ -237,9 +281,25 @@ export default function Contact() {
                   </p>
                 ) : null}
                 {success ? (
-                  <p className="text-center text-xs font-semibold text-green-600" role="status">
-                    Dziękujemy! Odezwiemy się w 24h.
-                  </p>
+                  <div className="flex flex-col items-center gap-3 text-center" role="status">
+                    <p className="text-sm font-semibold text-green-700">
+                      Dziękujemy! Odezwiemy się możliwie szybko. Jeśli sprawa jest pilna – zadzwoń: +48 789 008 911.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      <a
+                        href="tel:+48789008911"
+                        className="rounded-lg border border-primary bg-white px-4 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-white"
+                      >
+                        Zadzwoń
+                      </a>
+                      <a
+                        href="mailto:office@bluevinta.com"
+                        className="rounded-lg border border-border-light bg-white px-4 py-2 text-xs font-bold text-text-main transition-colors hover:bg-gray-50"
+                      >
+                        Napisz email
+                      </a>
+                    </div>
+                  </div>
                 ) : (
                   <p className="mt-2 text-center text-xs text-secondary">
                     Twoje dane są bezpieczne. Odpowiadamy zazwyczaj w ciągu 2h.

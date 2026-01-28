@@ -58,6 +58,8 @@ export async function POST(req: NextRequest) {
     const email = asString((body as Record<string, unknown>).email);
     const phone = asString((body as Record<string, unknown>).phone);
     const details = asString((body as Record<string, unknown>).details);
+    const serviceType = asString((body as Record<string, unknown>).serviceType);
+    const direction = asString((body as Record<string, unknown>).direction);
     const website = asString((body as Record<string, unknown>).website);
 
     if (website && website.trim().length > 0) {
@@ -70,12 +72,30 @@ export async function POST(req: NextRequest) {
     const emailT = email.trim();
     const phoneT = phone.trim();
     const detailsT = details.trim();
+    const serviceTypeT = serviceType.trim();
+    const directionT = direction.trim();
+    const allowedServiceTypes = [
+      "Spedycja morska (FCL)",
+      "Spedycja morska (LCL)",
+      "Transport drogowy",
+      "Odprawa celna",
+      "Inne",
+    ];
+    const allowedDirections = [
+      "PL → UE",
+      "UE → PL",
+      "PL/UE → poza UE (eksport)",
+      "poza UE → PL/UE (import)",
+      "Nie wiem / do ustalenia",
+    ];
 
     if (!companyT) errors.push("company");
     if (!nameT) errors.push("name");
     if (!emailT || !emailRegex.test(emailT)) errors.push("email");
     if (!phoneT || phoneT.length < 7) errors.push("phone");
     if (!detailsT) errors.push("details");
+    if (!serviceTypeT || !allowedServiceTypes.includes(serviceTypeT)) errors.push("serviceType");
+    if (!directionT || !allowedDirections.includes(directionT)) errors.push("direction");
 
     if (errors.length) {
       return NextResponse.json({ ok: false, error: "validation", fields: errors }, { status: 400 });
@@ -90,6 +110,8 @@ export async function POST(req: NextRequest) {
       email: emailT,
       phone: phoneT,
       details: detailsT,
+      serviceType: serviceTypeT,
+      direction: directionT,
       source: "bluevinta-landing",
       userAgent: req.headers.get("user-agent") ?? "",
       ip,

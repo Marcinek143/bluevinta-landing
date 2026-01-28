@@ -26,6 +26,9 @@ export default function Hero() {
                 Zadzwoń teraz
               </a>
             </div>
+            <p className="text-sm text-secondary">
+              Odpowiadamy zwykle w 1–2h w dni robocze.
+            </p>
           </div>
           <div className="relative w-full flex-1 overflow-hidden rounded-2xl shadow-lg aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:h-[500px]">
             <Image
