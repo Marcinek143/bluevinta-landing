@@ -7,3 +7,7 @@ Stack:
 - TypeScript
 - Tailwind CSS
 - Vercel
+
+## Development
+
+- Dev uses Webpack (`npm run dev`) to avoid Turbopack hydration mismatch warnings.
