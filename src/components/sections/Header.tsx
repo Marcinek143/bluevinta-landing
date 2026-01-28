@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { MouseEvent, useEffect, useRef, useState } from "react";
 import { Icon } from "./Icon";
 
@@ -21,7 +22,12 @@ const mobileLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isMenuOpen) return undefined;
@@ -62,6 +68,42 @@ export default function Header() {
       setIsMenuOpen(false);
     }
   };
+
+  const mobileMenu = (
+    <>
+      <div
+        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
+          isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu nawigacji"
+        aria-hidden={!isMenuOpen}
+        className={`fixed inset-y-0 right-0 z-[60] h-full w-[85%] max-w-sm bg-white p-6 shadow-xl border-l border-slate-200 rounded-l-2xl transition-transform duration-300 ease-out lg:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="flex flex-col divide-y divide-border-light" aria-label="Menu mobilne">
+          {mobileLinks.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              ref={index === 0 ? firstLinkRef : undefined}
+              className="block py-3 text-lg font-medium text-text-main transition-colors hover:text-primary"
+              onClick={handleMobileNavClick(link.href)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </>
+  );
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border-light bg-background-light/95 backdrop-blur-sm">
@@ -108,39 +150,7 @@ export default function Header() {
           </button>
         </div>
       </div>
-      <div className="lg:hidden">
-        <div
-          className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 ${
-            isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-          onClick={closeMenu}
-          aria-hidden="true"
-        />
-        <div
-          id="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menu nawigacji"
-          aria-hidden={!isMenuOpen}
-          className={`fixed inset-y-0 right-0 z-[60] h-full w-[85%] max-w-sm bg-white p-6 shadow-xl border-l border-slate-200 rounded-l-2xl transition-transform duration-300 ease-out ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <nav className="flex flex-col divide-y divide-border-light" aria-label="Menu mobilne">
-            {mobileLinks.map((link, index) => (
-              <a
-                key={link.href}
-                href={link.href}
-                ref={index === 0 ? firstLinkRef : undefined}
-                className="block py-3 text-lg font-medium text-text-main transition-colors hover:text-primary"
-                onClick={handleMobileNavClick(link.href)}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
+      {mounted ? createPortal(mobileMenu, document.body) : null}
     </header>
   );
 }
