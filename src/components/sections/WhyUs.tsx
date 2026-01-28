@@ -21,7 +21,10 @@ const imageUrl =
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="w-full border-b border-border-light bg-background-light py-20">
+    <section
+      id="dlaczego-my"
+      className="w-full border-b border-border-light bg-background-light py-20 scroll-mt-24"
+    >
       <div className="px-4 md:px-8 lg:px-40 flex justify-center">
         <div className="flex w-full max-w-[1280px] flex-col items-center gap-16 md:flex-row">
           <div className="flex flex-1 flex-col gap-8">

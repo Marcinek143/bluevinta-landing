@@ -23,22 +23,22 @@ export default function Footer() {
             <div className="flex flex-wrap gap-8">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-bold text-gray-200">Usługi</h3>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#services">
+                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#uslugi">
                   Spedycja morska
                 </a>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#services">
+                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#uslugi">
                   Transport drogowy
                 </a>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#services">
+                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#uslugi">
                   Odprawy celne
                 </a>
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-bold text-gray-200">Firma</h3>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#why-us">
+                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#dlaczego-my">
                   O nas
                 </a>
-                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#contact">
+                <a className="text-sm text-gray-400 transition-colors hover:text-white" href="#kontakt">
                   Kariera
                 </a>
                 <a

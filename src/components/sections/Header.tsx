@@ -1,21 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 import { Icon } from "./Icon";
 
 const navLinks = [
-  { href: "#services", label: "Usługi" },
-  { href: "#why-us", label: "O nas" },
-  { href: "#process", label: "Proces" },
-  { href: "#contact", label: "Kontakt" },
+  { href: "#uslugi", label: "Usługi" },
+  { href: "#dlaczego-my", label: "Dlaczego my" },
+  { href: "#proces", label: "Proces" },
+  { href: "#kontakt", label: "Kontakt" },
 ];
 
 const mobileLinks = [
-  { href: "#services", label: "Usługi" },
-  { href: "#why-us", label: "Dlaczego my" },
-  { href: "#process", label: "Proces" },
-  { href: "#contact", label: "Kontakt" },
+  { href: "#uslugi", label: "Usługi" },
+  { href: "#dlaczego-my", label: "Dlaczego my" },
+  { href: "#proces", label: "Proces" },
+  { href: "#kontakt", label: "Kontakt" },
   { href: "/polityka-prywatnosci", label: "Polityka prywatności" },
 ];
 
@@ -45,6 +45,23 @@ export default function Header() {
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
+  const scrollToSection = (targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleMobileNavClick = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith("#")) {
+      event.preventDefault();
+      const targetId = href.slice(1);
+      setIsMenuOpen(false);
+      requestAnimationFrame(() => scrollToSection(targetId));
+    } else {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border-light bg-background-light/95 backdrop-blur-sm">
@@ -73,7 +90,7 @@ export default function Header() {
               ))}
             </nav>
             <a
-              href="#contact"
+              href="#kontakt"
               className="flex h-10 items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
             >
               Bezpłatna wycena
@@ -93,7 +110,7 @@ export default function Header() {
       </div>
       <div className="lg:hidden">
         <div
-          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
+          className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 ${
             isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
           onClick={closeMenu}
@@ -105,7 +122,7 @@ export default function Header() {
           aria-modal="true"
           aria-label="Menu nawigacji"
           aria-hidden={!isMenuOpen}
-          className={`fixed inset-y-0 right-0 z-50 h-full w-[85%] max-w-sm bg-white p-6 shadow-xl border-l border-border-light rounded-l-2xl transition-transform duration-300 ease-out ${
+          className={`fixed inset-y-0 right-0 z-[60] h-full w-[85%] max-w-sm bg-white p-6 shadow-xl border-l border-slate-200 rounded-l-2xl transition-transform duration-300 ease-out ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -116,7 +133,7 @@ export default function Header() {
                 href={link.href}
                 ref={index === 0 ? firstLinkRef : undefined}
                 className="block py-3 text-lg font-medium text-text-main transition-colors hover:text-primary"
-                onClick={closeMenu}
+                onClick={handleMobileNavClick(link.href)}
               >
                 {link.label}
               </a>

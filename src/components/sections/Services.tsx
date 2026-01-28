@@ -35,7 +35,7 @@ const services: Array<{ title: string; description: string; icon: IconName }> = 
 
 export default function Services() {
   return (
-    <section id="services" className="w-full bg-background-subtle py-20">
+    <section id="uslugi" className="w-full bg-background-subtle py-20 scroll-mt-24">
       <div className="px-4 md:px-8 lg:px-40 flex justify-center">
         <div className="flex w-full max-w-[1280px] flex-col gap-12">
           <div className="flex flex-col gap-2">

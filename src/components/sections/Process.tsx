@@ -39,7 +39,7 @@ function StepBadge({ variant, label }: { variant: StepVariant; label?: string })
 
 export default function Process() {
   return (
-    <section id="process" className="w-full bg-background-subtle py-24">
+    <section id="proces" className="w-full bg-background-subtle py-24 scroll-mt-24">
       <div className="px-4 md:px-8 lg:px-40 flex justify-center">
         <div className="flex w-full max-w-[1280px] flex-col gap-16">
           <div className="text-center">

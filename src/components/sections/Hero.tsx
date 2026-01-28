@@ -14,7 +14,7 @@ export default function Hero() {
             </p>
             <div className="mt-2 flex flex-wrap gap-4">
               <a
-                href="#contact"
+                href="#kontakt"
                 className="flex h-12 cursor-pointer items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:-translate-y-0.5 hover:bg-primary-dark"
               >
                 Bezpłatna wycena transportu
