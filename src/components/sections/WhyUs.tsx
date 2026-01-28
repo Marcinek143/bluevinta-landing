@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "./Icon";
 
 const highlights = [
@@ -41,12 +42,15 @@ export default function WhyUs() {
               ))}
             </ul>
           </div>
-          <div
-            className="relative h-[400px] w-full flex-1 overflow-hidden rounded-2xl shadow-xl"
-            role="img"
-            aria-label="Wnętrze nowoczesnego magazynu logistycznego"
-          >
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: imageUrl }} />
+          <div className="relative h-[400px] w-full flex-1 overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/trust-logistics.jpg"
+              alt="Doświadczenie i niezawodność w logistyce – Blue Vinta Services"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 600px, 100vw"
+            />
           </div>
         </div>
       </div>

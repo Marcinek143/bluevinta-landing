@@ -1,5 +1,4 @@
-const heroImage =
-  "linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsK3SL6G1YO9LXHU4zHiFcKkgqM7Rd7icVkatnJNfQXaU2KMQn60V2eVlRGgoejtuNLYqEVfkDy3zT3Tp3uvNkUGwZe61Q2WIyr8rNIivmNF5dz7YBDz7nVXLhHfqDaX-o4dB9i3b-CILMu4Rpl0OvkvZsqd0BEjlKWPiPKS15uxstXlQ6ojrmpvSOWGXWbfBZzOoDADdpcm91Fp-09ORhrLGzHy3t3TwUWgOCDlcnRZN3mfk20OmLtZ8RCBsFVwawYSNUz7P8qebt');";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -28,14 +27,14 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div
-            className="relative h-[300px] w-full flex-1 overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]"
-            role="img"
-            aria-label="Duży kontenerowiec w porcie z dźwigami w tle"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: heroImage }}
+          <div className="relative h-[300px] w-full flex-1 overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
+            <Image
+              src="/hero-logistics.jpg"
+              alt="Spedycja międzynarodowa i logistyka – Blue Vinta Services"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 600px, 100vw"
             />
           </div>
         </div>
