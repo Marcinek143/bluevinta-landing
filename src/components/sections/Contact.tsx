@@ -257,7 +257,7 @@ export default function Contact() {
                       </option>
                       {directionOptions.map((option) => (
                         <option key={option} value={option}>
-                          {option}
+                          {option === "PL → PL" ? "Transport krajowy (PL → PL)" : option}
                         </option>
                       ))}
                     </select>
