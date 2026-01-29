@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Icon } from "./Icon";
 
 type FormState = {
@@ -26,11 +26,37 @@ const initialState: FormState = {
   website: "",
 };
 
+const baseDirectionOptions = [
+  "PL → UE",
+  "UE → PL",
+  "PL/UE → poza UE (eksport)",
+  "poza UE → PL/UE (import)",
+  "Nie wiem / do ustalenia",
+] as const;
+
 export default function Contact() {
   const [values, setValues] = useState<FormState>(initialState);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const isRoadTransport = values.serviceType === "Transport drogowy";
+
+  const directionPlaceholder = isRoadTransport ? "Wybierz (np. Transport krajowy PL)" : "Wybierz...";
+
+  const directionOptions = useMemo(() => {
+    const options = [...baseDirectionOptions];
+    if (isRoadTransport) {
+      options.splice(2, 0, "PL → PL");
+    }
+    return options;
+  }, [isRoadTransport]);
+
+  useEffect(() => {
+    if (!isRoadTransport && values.direction === "PL → PL") {
+      setValues((prev) => ({ ...prev, direction: "" }));
+    }
+  }, [isRoadTransport, values.direction]);
 
   const disabled = useMemo(() => {
     return (
@@ -224,12 +250,14 @@ export default function Contact() {
                       onChange={(e) => updateField("direction")(e.target.value)}
                       className="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm text-text-main focus:border-primary focus:ring-1 focus:ring-primary"
                     >
-                      <option value="">Wybierz...</option>
-                      <option value="PL → UE">PL → UE</option>
-                      <option value="UE → PL">UE → PL</option>
-                      <option value="PL/UE → poza UE (eksport)">PL/UE → poza UE (eksport)</option>
-                      <option value="poza UE → PL/UE (import)">poza UE → PL/UE (import)</option>
-                      <option value="Nie wiem / do ustalenia">Nie wiem / do ustalenia</option>
+                      <option value="" disabled>
+                        {directionPlaceholder}
+                      </option>
+                      {directionOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
                     </select>
                   </label>
                 </div>

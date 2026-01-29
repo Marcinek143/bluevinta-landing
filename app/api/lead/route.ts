@@ -94,8 +94,10 @@ export async function POST(req: NextRequest) {
     if (!emailT || !emailRegex.test(emailT)) errors.push("email");
     if (!phoneT || phoneT.length < 7) errors.push("phone");
     if (!detailsT) errors.push("details");
+    const directionList = serviceTypeT === "Transport drogowy" ? [...allowedDirections, "PL → PL"] : allowedDirections;
+
     if (!serviceTypeT || !allowedServiceTypes.includes(serviceTypeT)) errors.push("serviceType");
-    if (!directionT || !allowedDirections.includes(directionT)) errors.push("direction");
+    if (!directionT || !directionList.includes(directionT)) errors.push("direction");
 
     if (errors.length) {
       return NextResponse.json({ ok: false, error: "validation", fields: errors }, { status: 400 });
