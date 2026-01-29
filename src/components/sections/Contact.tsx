@@ -11,7 +11,7 @@ type FormState = {
   phone: string;
   details: string;
   serviceType: string;
-  direction: string;
+  direction: Direction | "";
   website: string; // honeypot
 };
 
@@ -34,6 +34,8 @@ const baseDirectionOptions = [
   "Nie wiem / do ustalenia",
 ] as const;
 
+type Direction = (typeof baseDirectionOptions)[number] | "PL → PL";
+
 export default function Contact() {
   const [values, setValues] = useState<FormState>(initialState);
   const [loading, setLoading] = useState(false);
@@ -44,8 +46,8 @@ export default function Contact() {
 
   const directionPlaceholder = isRoadTransport ? "Wybierz (np. Transport krajowy PL)" : "Wybierz...";
 
-  const directionOptions = useMemo(() => {
-    const options = [...baseDirectionOptions];
+  const directionOptions = useMemo<Direction[]>(() => {
+    const options: Direction[] = [...baseDirectionOptions];
     if (isRoadTransport) {
       options.splice(2, 0, "PL → PL");
     }
@@ -111,8 +113,8 @@ export default function Contact() {
     }
   }
 
-  function updateField(field: keyof FormState) {
-    return (value: string) => setValues((prev) => ({ ...prev, [field]: value }));
+  function updateField<K extends keyof FormState>(field: K) {
+    return (value: FormState[K]) => setValues((prev) => ({ ...prev, [field]: value }));
   }
 
   return (
@@ -247,7 +249,7 @@ export default function Contact() {
                       name="direction"
                       required
                       value={values.direction}
-                      onChange={(e) => updateField("direction")(e.target.value)}
+                      onChange={(e) => updateField("direction")(e.target.value as Direction | "")}
                       className="rounded-lg border-border-light bg-white px-4 py-2.5 text-sm text-text-main focus:border-primary focus:ring-1 focus:ring-primary"
                     >
                       <option value="" disabled>
