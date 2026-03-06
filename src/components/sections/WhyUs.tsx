@@ -16,9 +16,6 @@ const highlights = [
   },
 ];
 
-const imageUrl =
-  "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBI3iePCUvCqQmk2AszlEjAzI9nOMMhCHz95H1-bSehsAdEnWslo9-szqP6-VqRj0QdkFtvv3CiqQ6-wV8mrnwiXECw7mz2lI1XMF75rfE-V3BbGIoyn1QKSgVjWf2RkWz68Zn-Gr7w60B0vFdSVx_3XRuczdNJfnWutuloxExNm3ElP8JEWU3OzUY2eLLECwoOkuIguyZMTKLuLYsO8r_dqQMyZ47EJLs6zgigwQFNlKb8CQHVCFryBFxzDlx78Fe2Jh_XoJmOQ2LC')";
-
 export default function WhyUs() {
   return (
     <section

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { createPortal } from "react-dom";
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Icon } from "./Icon";
 
 const navLinks = [
@@ -24,14 +24,18 @@ const corporateLink = {
   label: "Oficjalna strona (bluevinta.pl)",
 };
 
+const subscribeToMountedState = () => () => {};
+const getMountedSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const isMounted = useSyncExternalStore(
+    subscribeToMountedState,
+    getMountedSnapshot,
+    getServerSnapshot
+  );
 
   useEffect(() => {
     if (!isMenuOpen) return undefined;
@@ -165,7 +169,7 @@ export default function Header() {
           </button>
         </div>
       </div>
-      {mounted ? createPortal(mobileMenu, document.body) : null}
+      {isMounted ? createPortal(mobileMenu, document.body) : null}
     </header>
   );
 }
